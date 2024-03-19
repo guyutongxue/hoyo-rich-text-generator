@@ -42,7 +42,9 @@ function generate(e) {
     const closeTag = `</${uglify(tag)}>`;
     result = `${openTag}${result}${closeTag}`;
   }
-  document.querySelector("#output").textContent = result;
+  const output = document.querySelector("#output");
+  output.value = result;
+  output.select();
 }
 
 document.querySelector("#form").addEventListener("submit", generate);
