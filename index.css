@@ -4,3 +4,8 @@ input[value=color]:not(:checked) ~ input[name=colorValue] {
 input[value=size]:not(:checked) ~ input[name=sizeValue] {
   display: none;
 }
+
+.github {
+  position: fixed;
+  bottom: 0;
+}
