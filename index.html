@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>崩铁/原神富文本样式生成器</title>
+<link rel="stylesheet" href="index.css">
+
+<h1>崩铁/原神富文本样式生成器</h1>
+
+<form id="form">
+  <ul>
+    <li>
+      样式
+      <ul>
+        <li>
+          <input type="checkbox" name="tag" value="b" id="b" />
+          <label for="b">粗体</label>
+        </li>
+        <li>
+          <input type="checkbox" name="tag" value="i" id="i" />
+          <label for="i">斜体</label>
+        </li>
+        <li>
+          <input type="checkbox" name="tag" value="color" id="color" checked />
+          <label for="color">字体颜色</label>
+          <input type="color" name="colorValue" value="#e66465" />
+        </li>
+        <li>
+          <input type="checkbox" name="tag" value="size" id="size" />
+          <label for="size">字体大小</label>
+          <input type="number" name="sizeValue" value="40" />
+        </li>
+      </ul>
+    </li>
+    <li>
+      <label for="text">文本</label>
+      <input type="text" name="text" value="样例文本" />
+    </li>
+  </ul>
+  <button type="submit">生成</button>
+</form>
+
+<div>
+  <output id="output"></output>
+</div>
+<script src="index.js" type="module"></script>
