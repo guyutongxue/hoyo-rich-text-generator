@@ -4,6 +4,17 @@ input[value=color]:not(:checked) ~ input[name=colorValue] {
 input[value=size]:not(:checked) ~ input[name=sizeValue] {
   display: none;
 }
+#outputContainer[data-hidden] {
+  display: none;
+}
+#output {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  #output {
+    width: unset;
+  }
+}
 
 .github {
   position: fixed;

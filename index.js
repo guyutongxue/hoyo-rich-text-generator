@@ -24,7 +24,7 @@ function uglify(input) {
  * 
  * @param {SubmitEvent} e 
  */
-function generate(e) {
+async function generate(e) {
   e.preventDefault();
   const data = new FormData(document.querySelector("#form"));
   const tags = data.getAll("tag");
@@ -44,7 +44,13 @@ function generate(e) {
   }
   const output = document.querySelector("#output");
   output.value = result;
-  output.select();
+  if (navigator.clipboard) {
+    await navigator.clipboard.writeText(result);
+  } else {
+    output.select();
+    document.execCommand("copy");
+  }
+  document.querySelector("#outputContainer").removeAttribute("data-hidden");
 }
 
 document.querySelector("#form").addEventListener("submit", generate);
