@@ -33,9 +33,13 @@ async function generate(e) {
   for (const tag of tags) {
     let openTag = `<${uglify(tag)}`;
     if (tag === "color") {
-      openTag += `=${colorValue}>`; 
+      openTag += `=${colorValue.replace(/89/g, "8a").replace(/64/g, "65")}>`; 
     } else if (tag === "size") {
-      openTag += `=${sizeValue}>`;
+      let adjustedSizeValue = sizeValue;
+      if (adjustedSizeValue === 89 || adjustedSizeValue === 64) {
+        adjustedSizeValue -= 1;
+      }
+      openTag += `=${adjustedSizeValue}>`;
     } else {
       openTag += ">";
     }
